@@ -30,7 +30,7 @@ function gbs_main(){
 
 function gbs_custom_options()
 {
-	add_menu_page('Global Settings', 'Global Settings','administrator', 'gbs', '', plugins_url('Global-settings/download.png'), '4');
+	add_menu_page('Global Settings', 'Global Settings','administrator', 'gbs', '', plugins_url('global-settings/download.png'), '4');
 	add_submenu_page( 'gbs', 'Manage', 'Manage', 'administrator', 'gbs', 'gbs_main' );
 }
 	add_action('admin_menu', 'gbs_custom_options');
