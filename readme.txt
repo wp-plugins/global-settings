@@ -27,7 +27,7 @@ Advanced features include:
 
 1. Shortcode available for post and pages in your site.
 
-Get Paid version at : just4u.x10.bz
+Get Paid version at : http://just4u.x10.bz/global
 
 
 == Settings ==
