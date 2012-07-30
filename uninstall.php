@@ -3,7 +3,7 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) )
 	exit();
 
-function mys_delete_plugin() {
+function gbs_delete_plugin() {
 	global $wpdb;
 
 	$table_name = $wpdb->prefix . "options";
@@ -11,6 +11,6 @@ function mys_delete_plugin() {
 	$wpdb->query( "DELETE FROM $table_name WHERE option_name LIKE 'gbs_%'" );
 }
 
-mys_delete_plugin();
+gbs_delete_plugin();
 
 ?>

@@ -1,7 +1,7 @@
 === Global Setting ===
 Contributors: victor4g, vishaljp
 Donate link: http://just4u.x10.bz/donate
-Tags: custom, global, settings, global setting, custom global fields, general settings, global options, edit global, options, global variable, variable
+Tags: custom, global, settings, global setting, custom global fields, general settings, global options, edit global, options, global variable, variable, custom options
 Requires at least: 2.0.2
 Tested up to: 3.3.1
 Stable tag: 4.3

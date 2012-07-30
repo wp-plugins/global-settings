@@ -46,18 +46,7 @@ background:none;
 </table>
 </form>
 
-
-<form method="post" action="options.php" name="update_go">
-<?php wp_nonce_field('update-options');?>
-<table class="widefat">
-<tr>
-<th class="left" width="40">Delete</th>
-<th class="left" width="90">Option Name</th>
-<th class="left" width="200">Option Value</th>
-<th class="left" width="250">PHP Code to Use</th>
-</tr>
 <?php
-
 if(isset($_POST['del_ids'])){
 $del = explode(',',$_POST['del_ids']);
 foreach($del as $k => $v){
@@ -70,6 +59,21 @@ $my_op = $wpdb->get_results("select * from ".$wpdb->prefix."options where option
 $total = $wpdb->num_rows;
 $i= 1;
 $opname = '';
+
+if($total > 0){
+
+echo '<form method="post" action="options.php" name="update_go">';
+wp_nonce_field('update-options');
+
+echo '<table class="widefat">
+<tr>
+<th class="left" width="40">Delete</th>
+<th class="left" width="90">Option Name</th>
+<th class="left" width="200">Option Value</th>
+<th class="left" width="250">PHP Code to Use</th>
+</tr>';
+
+
 foreach($my_op as $k => $v){
 
 $op = substr($v->option_name,4,strlen($v->option_name));
@@ -101,6 +105,8 @@ $opname .= $v->option_name.',';
 </table>
 </form>
 
+<?php } ?>
+
 </div>
 
 <br style="clear:both" />
@@ -126,7 +132,6 @@ jQuery('.widefat .op_val').blur(function(){
 
 
 jQuery('.delete_text').click(function(){
-if(confirm('Are you sure to delete selected Option value Pairs?')){
 var tot = '<?php echo $total; ?>';
 var op = 1;
 var did = '';
@@ -136,8 +141,14 @@ var ids = jQuery('#rid_'+op).val();
 did += ids +',';
 }
 }
-jQuery('#del_ids').val(did);
-}
+	if(did!=''){
+		if(confirm('Are you sure to delete selected Option value Pairs?')){
+			jQuery('#del_ids').val(did);
+		}
+	}else{
+		alert('Please Select Options to delete.');
+		return false;
+	}
 });
 
 jQuery('#add_text').click(function(){
