@@ -34,5 +34,11 @@ function gbs_custom_options()
 	add_submenu_page( 'gbs', 'Manage', 'Manage', 'administrator', 'gbs', 'gbs_main' );
 }
 	add_action('admin_menu', 'gbs_custom_options');
+	add_shortcode('global', 'gbs_global_option');
+	function gbs_global_option($attr)
+{
+	return get_option('gbs_'.$attr[0]);
+	
+}	
 
 ?>
