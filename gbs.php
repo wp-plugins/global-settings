@@ -3,12 +3,11 @@
 /*
 Plugin Name: Global Settings
 Author: Victor4g, vishaljp
-Author URI: http://just4u.x10.bz
-Plugin URI: http://vishaljp.wordpress.com
-Version: 1.0
+Author URI: http://vishaljp.wordpress.com
+Version: 1.1
 Description: Global Setting allows you to add, update and delete the global variables for your blog.
 
-This file is part of My Settings.
+This file is part of Global Settings.
 
 Global Setting is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
